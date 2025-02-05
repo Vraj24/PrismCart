@@ -66,7 +66,14 @@ const CreateProduct = () => {
 
   return (
     <Layout title={"Dashboard - Create Product"}>
-      <div className="container-fluid m-3 p-3">
+      <div
+        className="container-fluid m-3 p-3"
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+          width: "80",
+          // height: "79vh",
+        }}
+      >
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
@@ -108,8 +115,8 @@ const CreateProduct = () => {
                     <img
                       src={URL.createObjectURL(photo)}
                       alt="product-photo"
-                      height={"200px"}
                       className="img img-responsive"
+                      style={{width:"150px", height:"150px"}}
                     />
                   </div>
                 )}

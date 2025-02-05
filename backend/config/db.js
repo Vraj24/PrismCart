@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import colors from 'colors';
 
+// mongodb://localhost:27017/ecommerce
+
 const connectDB = async () => {
     try {
         const conn = await mongoose.connect(process.env.MONGO_URL);

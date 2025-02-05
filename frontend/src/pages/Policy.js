@@ -4,22 +4,28 @@ import Layout from "./../components/Layout/Layout";
 const Policy = () => {
   return (
     <Layout title={"Privacy Policy"}>
-      <div className="row contactus ">
+      <div
+        className="row contactus"
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+        }}
+      >
         <div className="col-md-6 ">
           <img
-            src="/images/contactus.webp"
+            src="/images/policy.png"
             alt="contactus"
             style={{ width: "100%" }}
           />
         </div>
         <div className="col-md-4">
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
-          <p>add privacy policy</p>
+          <p className="text-justify mt-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            officiis obcaecati esse tempore unde ratione, eveniet mollitia,
+            perferendis eius temporibus dicta blanditiis doloremque explicabo
+            quasi sunt vero optio cum aperiam vel consectetur! Laborum enim
+            accusantium atque, excepturi sapiente amet! Tenetur ducimus aut
+            commodi illum quidem neque tempora nam.
+          </p>
         </div>
       </div>
     </Layout>

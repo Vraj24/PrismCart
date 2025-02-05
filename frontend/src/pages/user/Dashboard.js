@@ -6,8 +6,12 @@ import { useAuth } from "../../context/auth";
 const Dashboard = () => {
   const [auth] = useAuth();
   return (
-    <Layout title={"Dashboard - E-commerce App"}>
-      <div className="container-flui m-3 p-3">
+    <Layout title={"Dashboard - E-commerce App"} >
+      <div className="container-flui m-3 p-3" style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+          width:"80",
+          height:"80vh"
+        }}>
         <div className="row">
           <div className="col-md-3">
             <UserMenu />

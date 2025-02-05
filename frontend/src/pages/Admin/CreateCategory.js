@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../components/form/CategoryForm";
 import { Modal } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -12,6 +13,7 @@ const CreateCategory = () => {
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
+  const navigate = useNavigate();
 
   // handle form
   const handleSubmit = async (e) => {
@@ -64,7 +66,9 @@ const CreateCategory = () => {
         setVisible(false);
         getAllCategory();
       } else {
-        toast.error(data.message);
+        toast.success('category updated.');
+        setVisible(false);
+        getAllCategory();
       }
     } catch (error) {
       toast.error("something went wrong");
@@ -78,10 +82,11 @@ const CreateCategory = () => {
         `/api/v1/category/delete-category/${pId}`
       );
       if (data?.success) {
-        toast.success(`${name} is deleted.`);
+        toast.error(data.message);
         getAllCategory();
       } else {
-        toast.error(data.message);
+        toast.success("Category deleted.");
+        getAllCategory();
       }
     } catch (error) {
       toast.error("something went wrong");
@@ -90,7 +95,13 @@ const CreateCategory = () => {
 
   return (
     <Layout title={"Dashboard - Create Category"}>
-      <div className="container-fluid m-3 p-3">
+      <div
+        className="container-fluid m-3 p-3"
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+          width: "80",
+        }}
+      >
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />

@@ -3,11 +3,15 @@ import Layout from "../components/Layout/Layout";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/CategoryProductStyles.css";
 import axios from "axios";
+import { useCart } from "../context/cart";
+import toast from "react-hot-toast";
+
 const CategoryProduct = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
+  const [cart, setCart] = useCart();
 
   useEffect(() => {
     if (params?.slug) getPrductsByCat();
@@ -26,7 +30,12 @@ const CategoryProduct = () => {
 
   return (
     <Layout>
-      <div className="container mt-3 category">
+      <div
+        className="mt-3 category"
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+        }}
+      >
         <h4 className="text-center">Category - {category?.name}</h4>
         <h6 className="text-center">{products?.length} result found </h6>
         <div className="row">
@@ -39,7 +48,10 @@ const CategoryProduct = () => {
                     className="card-img-top"
                     alt={p.name}
                   />
-                  <div className="card-body">
+                  <div
+                    className="card-body"
+                    style={{ backgroundColor: "white" }}
+                  >
                     <div className="card-name-price">
                       <h5 className="card-title">{p.name}</h5>
                       <h5 className="card-title card-price">
@@ -49,9 +61,7 @@ const CategoryProduct = () => {
                         })}
                       </h5>
                     </div>
-                    <p className="card-text ">
-                      {p.description.substring(0, 60)}...
-                    </p>
+                    <p className="card-text ">{p.description}</p>
                     <div className="card-name-price">
                       <button
                         className="btn btn-info ms-1"
@@ -59,19 +69,19 @@ const CategoryProduct = () => {
                       >
                         More Details
                       </button>
-                      {/* <button
-                    className="btn btn-dark ms-1"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      localStorage.setItem(
-                        "cart",
-                        JSON.stringify([...cart, p])
-                      );
-                      toast.success("Item Added to cart");
-                    }}
-                  >
-                    ADD TO CART
-                  </button> */}
+                      <button
+                        className="btn btn-dark ms-1"
+                        onClick={() => {
+                          setCart([...cart, p]);
+                          localStorage.setItem(
+                            "cart",
+                            JSON.stringify([...cart, p])
+                          );
+                          toast.success("Item Added to cart");
+                        }}
+                      >
+                        ADD TO CART
+                      </button>
                     </div>
                   </div>
                 </div>

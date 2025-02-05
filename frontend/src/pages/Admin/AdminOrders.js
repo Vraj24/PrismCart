@@ -13,8 +13,8 @@ const AdminOrders = () => {
     "Not Process",
     "Processing",
     "Shipped",
-    "deliverd",
-    "cancel",
+    "Delivered",
+    "Cancel",
   ]);
   const [changeStatus, setCHangeStatus] = useState("");
   const [orders, setOrders] = useState([]);
@@ -44,7 +44,14 @@ const AdminOrders = () => {
   };
   return (
     <Layout title={"All Orders Data"}>
-      <div className="row dashboard">
+      <div
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+          width: "80",
+          // height: "72vh",
+        }}
+        className="row dashboard"
+      >
         <div className="col-md-3">
           <AdminMenu />
         </div>
@@ -52,8 +59,8 @@ const AdminOrders = () => {
           <h1 className="text-center">All Orders</h1>
           {orders?.map((o, i) => {
             return (
-              <div className="border shadow">
-                <table className="table">
+              <div className="border-dark shadow">
+                <table className="table border-dark shadow">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -95,8 +102,7 @@ const AdminOrders = () => {
                           src={`/api/v1/product/product-photo/${p._id}`}
                           className="card-img-top"
                           alt={p.name}
-                          width="100px"
-                          height={"100px"}
+                          style={{width:"130px",marginLeft:"30%"}}
                         />
                       </div>
                       <div className="col-md-8">

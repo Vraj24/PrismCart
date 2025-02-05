@@ -52,7 +52,13 @@ const Profile = () => {
 
   return (
     <Layout title={"Your Profile"}>
-      <div className="container-fluid m-3 p-3">
+      <div
+        className="container-fluid m-3 p-3"
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+          height: "73vh",
+        }}
+      >
         <div className="row">
           <div className="col-md-3">
             <UserMenu />
@@ -61,7 +67,10 @@ const Profile = () => {
             <div className="form-container">
               <form
                 onSubmit={handleSubmit}
-                style={{ width: "400px", marginTop: "0px" }}
+                style={{
+                  width: "400px",
+                  marginRight: "30em",
+                }}
               >
                 <h2 className="title">USER PROFILE</h2>
                 <div className="mb-3">

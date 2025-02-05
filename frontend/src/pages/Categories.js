@@ -6,7 +6,16 @@ const Categories = () => {
   const categories = useCategory();
   return (
     <Layout title={"All Categories"}>
-      <div className="container" style={{ marginTop: "100px" }}>
+      <div
+        className=""
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+          display:"flex",
+          justifyContent:"center",
+          alignItems:"center",
+          height:"auto",
+        }}
+      >
         <div className="row container">
           {categories.map((c) => (
             <div className="col-md-4 mt-5 mb-3 gx-3 gy-3" key={c._id}>

@@ -22,9 +22,15 @@ const Products = () => {
   useEffect(() => {
     getAllProducts();
   }, []);
+  
   return (
     <Layout>
-      <div className="row dashboard">
+      <div
+        className="row dashboard"
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+        }}
+      >
         <div className="col-md-3">
           <AdminMenu />
         </div>

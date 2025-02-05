@@ -46,19 +46,19 @@ const Login = () => {
   };
 
   return (
-    <Layout title="Login - E-commerce App">
+    <Layout title="Login - PrismCart">
       <div className="form-container">
         <form
           onSubmit={handleSubmit}
           style={{ width: "400px", marginTop: "50px" }}
         >
-          <h2 className="title">LOGIN FORM</h2>
+          <h2 className="title">Log In</h2>
           <div className="mb-3">
             <input
               type="email"
               className="form-control"
               id="exampleInputEmail1"
-              placeholder="Enter Your E-mail"
+              placeholder="E-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -69,26 +69,26 @@ const Login = () => {
               type="password"
               className="form-control"
               id="exampleInputPassword1"
-              placeholder="Enter Password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <button
+          {/* <button
             type="button"
             style={{ width: "100%", marginBottom:"10px" }}
             className="btn btn-primary"
             onClick={() => {navigate('/forgot-password')}}
           >
             Forgot Password
-          </button>
+          </button> */}
           <button
             type="submit"
             style={{ width: "100%" }}
             className="btn btn-primary"
           >
-            LOGIN
+            Sign In
           </button>
         </form>
       </div>

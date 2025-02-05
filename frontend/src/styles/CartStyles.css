@@ -1,5 +1,8 @@
 .cart-page {
-    margin-top: 64px;
+    /* margin-top: 64px; */
+    height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   
   .cart-page h1 {

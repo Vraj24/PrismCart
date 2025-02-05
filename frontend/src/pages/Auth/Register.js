@@ -51,13 +51,13 @@ const Register = () => {
           onSubmit={handleSubmit}
           style={{ width: "400px", marginTop: "0px" }}
         >
-          <h2 className="title">REGISTER FORM</h2>
+          <h2 className="title">Create an Account</h2>
           <div className="mb-3">
             <input
               type="text"
               className="form-control"
               id="exampleInputEmail1"
-              placeholder="Enter Your name"
+              placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -68,7 +68,7 @@ const Register = () => {
               type="email"
               className="form-control"
               id="exampleInputEmail1"
-              placeholder="Enter Your E-mail"
+              placeholder="E-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -79,7 +79,7 @@ const Register = () => {
               type="password"
               className="form-control"
               id="exampleInputPassword1"
-              placeholder="Enter Password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -90,7 +90,7 @@ const Register = () => {
               type="text"
               className="form-control"
               id="exampleInputEmail1"
-              placeholder="Enter Your Phone Number"
+              placeholder="Phone Number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
@@ -101,7 +101,7 @@ const Register = () => {
               type="text"
               className="form-control"
               id="exampleInputEmail1"
-              placeholder="Enter your Address"
+              placeholder="Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               required
@@ -112,7 +112,7 @@ const Register = () => {
               type="text"
               className="form-control"
               id="exampleInputEmail1"
-              placeholder="Enter Your Birth Place"
+              placeholder="Birth Place"
               value={answer}
               onChange={(e) => setAnswer(e.target.value)}
               required
@@ -123,7 +123,7 @@ const Register = () => {
             style={{ width: "100%" }}
             className="btn btn-primary"
           >
-            REGISTER
+            Sign Up
           </button>
         </form>
       </div>

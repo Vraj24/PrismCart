@@ -29,33 +29,33 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/product/:slug" element={<ProductDetails />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/category/:slug" element={<CategoryProduct />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/dashboard" element={<PrivateRoute />}>
-          <Route path="user" element={<Dashboard />} />
-          <Route path="user/orders" element={<Orders />} />
-          <Route path="user/profile" element={<Profile />} />
+        <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/product/:slug" element={<ProductDetails />} />
+        <Route exact path="/categories" element={<Categories />} />
+        <Route exact path="/cart" element={<CartPage />} />
+        <Route exact path="/category/:slug" element={<CategoryProduct />} />
+        <Route exact path="/search" element={<Search />} />
+        <Route exact path="/dashboard" element={<PrivateRoute />}>
+          <Route exact path="user" element={<Dashboard />} />
+          <Route exact path="user/orders" element={<Orders />} />
+          <Route exact path="user/profile" element={<Profile />} />
         </Route>
-        <Route path="/dashboard" element={<AdminRoute />}>
-          <Route path="admin" element={<AdminDashboard />} />
-          <Route path="admin/create-category" element={<CreateCategory />} />
-          <Route path="admin/create-product" element={<CreateProduct />} />
-          <Route path="admin/product/:slug" element={<UpdateProduct />} />
-          <Route path="admin/products" element={<Products />} />
-          <Route path="admin/users" element={<Users />} />
-          <Route path="admin/orders" element={<AdminOrders />} />
+        <Route exact path="/dashboard" element={<AdminRoute />}>
+          <Route exact path="admin" element={<AdminDashboard />} />
+          <Route exact path="admin/create-category" element={<CreateCategory />} />
+          <Route exact path="admin/create-product" element={<CreateProduct />} />
+          <Route exact path="admin/product/:slug" element={<UpdateProduct />} />
+          <Route exact path="admin/products" element={<Products />} />
+          <Route exact path="admin/users" element={<Users />} />
+          <Route exact path="admin/orders" element={<AdminOrders />} />
         </Route>
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/policy" element={<Policy />} />
-        <Route path="*" element={<Pagenotfound />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/forgot-password" element={<ForgotPassword />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/policy" element={<Policy />} />
+        <Route exact path="*" element={<Pagenotfound />} />
       </Routes>
     </>
   );

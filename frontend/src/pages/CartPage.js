@@ -77,28 +77,36 @@ const CartPage = () => {
       setLoading(false);
     }
   };
+
   return (
     <Layout>
-      <div className=" cart-page">
+      <div
+        className=" cart-page"
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+          width: "80",
+          // height:"72vh"
+        }}
+      >
         <div className="row">
           <div className="col-md-12">
             <h1 className="text-center bg-light p-2 mb-1">
               {!auth?.user
-                ? "Hello Guest"
-                : `Hello  ${auth?.token && auth?.user?.name}`}
+                ? "Hello, Guest"
+                : `Hello,  ${auth?.token && auth?.user?.name}`}
               <p className="text-center">
                 {cart?.length
                   ? `You Have ${cart.length} items in your cart ${
                       auth?.token ? "" : "please login to checkout !"
                     }`
-                  : " Your Cart Is Empty"}
+                  : " Your cart is Empty"}
               </p>
             </h1>
           </div>
         </div>
         <div className="container ">
           <div className="row ">
-            <div className="col-md-7  p-0 m-0">
+            <div className="col-md-7  p-3 m-0">
               {cart?.map((p) => (
                 <div className="row card flex-row" key={p._id}>
                   <div className="col-md-4">
@@ -106,14 +114,18 @@ const CartPage = () => {
                       src={`/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
-                      width="100%"
-                      height={"130px"}
+                      width="90"
+                      height={"140"}
                     />
                   </div>
                   <div className="col-md-4">
-                    <p>{p.name}</p>
-                    <p>{p.description.substring(0, 30)}</p>
-                    <p>Price : {p.price}</p>
+                    <p>
+                      <b>{p.name}</b>
+                    </p>
+                    <p>{p.description}</p>
+                    <p>
+                      Price : <b>₹{p.price}</b>
+                    </p>
                   </div>
                   <div className="col-md-4 cart-remove-btn">
                     <button
@@ -142,6 +154,14 @@ const CartPage = () => {
                     >
                       Update Address
                     </button>
+                    &nbsp;&nbsp;
+                    {/* <a
+                      href="/api/v1/product/pdf"
+                      class="btn btn-success"
+                      download
+                    >
+                      Generate Pdf
+                    </a> */}
                   </div>
                 </>
               ) : (
@@ -167,7 +187,10 @@ const CartPage = () => {
                   )}
                 </div>
               )}
-              <div className="mt-2">
+
+              {/* <button className="btn btn-primary m-3">Payment</button> */}
+
+              <div className="mt-1">
                 {!clientToken || !auth?.token || !cart?.length ? (
                   ""
                 ) : (
@@ -181,7 +204,7 @@ const CartPage = () => {
                       }}
                       onInstance={(instance) => setInstance(instance)}
                     />
-
+                    &nbsp;&nbsp;&nbsp;
                     <button
                       className="btn btn-primary"
                       onClick={handlePayment}

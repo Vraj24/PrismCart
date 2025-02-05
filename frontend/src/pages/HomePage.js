@@ -109,14 +109,20 @@ const HomePage = () => {
   return (
     <Layout title={"All Products - Best offers "}>
       {/* banner image*/}
-      <img
-        src="/images/banner.png"
+      {/* <img
+        src="/images/ban"
         className="banner-img"
         alt="bannerimage"
         width={"100%"}
-      />
+      /> */}
       {/* banner image */}
-      <div className="container-fluid row mt-3 home-page">
+      <div
+        className="container-fluid row mt-10 home-page"
+        style={{
+          backgroundImage: "linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)",
+        }}
+      >
+        <h1 className="text-center">All Products</h1>
         <div className="col-md-3 filters">
           <h4 className="text-center">Filter By Category</h4>
           <div className="d-flex flex-column">
@@ -130,8 +136,8 @@ const HomePage = () => {
             ))}
           </div>
           {/* price filter */}
-          <h4 className="text-center mt-4">Filter By Price</h4>
-          <div className="d-flex flex-column">
+          {/* <h4 className="text-center mt-4">Filter By Price</h4> */}
+          {/* <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
                 <div key={p._id}>
@@ -139,7 +145,7 @@ const HomePage = () => {
                 </div>
               ))}
             </Radio.Group>
-          </div>
+          </div> */}
           <div className="d-flex flex-column">
             <button
               className="btn btn-danger"
@@ -149,19 +155,33 @@ const HomePage = () => {
             </button>
           </div>
         </div>
-        <div className="col-md-9 ">
-          <h1 className="text-center">All Products</h1>
+        <div className="col-md-9">
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
-              <div className="card m-2" key={p._id}>
+              <div
+                className="card m-2"
+                key={p._id}
+                style={{ backgroundColor: "white" }}
+              >
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />
+                <hr />
                 <div className="card-body">
                   <div className="card-name-price">
-                    <h5 className="card-title">{p.name}</h5>
+                    <h5
+                      className="card-title"
+                      style={{
+                        display: "-webkit-box",
+                        overflow: "hidden",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 1,
+                      }}
+                    >
+                      {p.name}
+                    </h5>
                     <h5 className="card-title card-price">
                       {p.price.toLocaleString("en-US", {
                         style: "currency",
@@ -169,8 +189,16 @@ const HomePage = () => {
                       })}
                     </h5>
                   </div>
-                  <p className="card-text ">
-                    {p.description.substring(0, 60)}...
+                  <p
+                    className="card-text "
+                    style={{
+                      display: "-webkit-box",
+                      overflow: "hidden",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 2,
+                    }}
+                  >
+                    {p.description}
                   </p>
                   <div className="card-name-price">
                     <button
@@ -197,26 +225,26 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-          <div className="m-2 p-3">
-            {products && products.length < total && (
-              <button
-                className="btn loadmore"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPage(page + 1);
-                }}
-              >
-                {loading ? (
-                  "Loading ..."
-                ) : (
-                  <>
-                    {" "}
-                    Loadmore <AiOutlineReload />
-                  </>
-                )}
-              </button>
-            )}
-          </div>
+        </div>
+        <div className="m-2 p-3">
+          {products && products.length < total && (
+            <button
+              className="btn loadmore"
+              onClick={(e) => {
+                e.preventDefault();
+                setPage(page + 1);
+              }}
+            >
+              {loading ? (
+                "Loading ..."
+              ) : (
+                <>
+                  {" "}
+                  Loadmore <AiOutlineReload />
+                </>
+              )}
+            </button>
+          )}
         </div>
       </div>
     </Layout>
