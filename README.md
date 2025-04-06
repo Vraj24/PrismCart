@@ -17,7 +17,7 @@ PrismCart is a full-stack e-commerce application built using the **MERN** stack 
 
 A fully functional mobile app version is built using **Flutter**, offering the same sleek interface and functionality as the web version.
 
-👉 **Check out the mobile repo**: [PrismCart Mobile](https://github.com/Vraj24/prismcart_app)
+👉 **Check out the App repo**: [PrismCart App](https://github.com/Vraj24/prismcart_app)
 
 ---
 
