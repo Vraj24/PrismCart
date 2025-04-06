@@ -2,8 +2,6 @@
 
 <img width="1512" alt="Screenshot 2025-04-06 at 6 46 25 PM" src="https://github.com/user-attachments/assets/eaf1c48e-605f-436f-88d1-ee88cfc27868" />
 
-<img width="1512" alt="Screenshot 2025-04-06 at 6 46 25 PM 1" src="https://github.com/user-attachments/assets/62040c4b-68c5-41cc-82c3-6b60732da601" />
-
 <img width="1512" alt="Screenshot 2025-04-06 at 6 48 10 PM" src="https://github.com/user-attachments/assets/24aaa113-9ec4-4f2a-b24f-260bd9f1098c" />
 
 <img width="1512" alt="Screenshot 2025-04-06 at 6 49 20 PM" src="https://github.com/user-attachments/assets/db6b31fa-b743-4caf-9daf-0ef7bcaae90c" />
